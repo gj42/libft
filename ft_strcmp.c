@@ -6,7 +6,7 @@
 /*   By: gjensen <gjensen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 14:19:06 by gjensen           #+#    #+#             */
-/*   Updated: 2015/01/28 18:24:38 by gjensen          ###   ########.fr       */
+/*   Updated: 2015/02/17 18:46:03 by gjensen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_strcmp(const char *s1, const char *s2)
 {
-	int 			i;
+	int				i;
 	unsigned char	*ts1;
 	unsigned char	*ts2;
 
