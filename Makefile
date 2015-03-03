@@ -6,7 +6,7 @@
 	#    By: gjensen <gjensen@student.42.fr>            +#+  +:+       +#+         #
 	#                                                 +#+#+#+#+#+   +#+            #
 	#    Created: 2014/11/03 12:29:01 by gjensen           #+#    #+#              #
-#    Updated: 2015/01/22 18:41:27 by gjensen          ###   ########.fr        #
+#    Updated: 2015/03/03 20:55:50 by gjensen          ###   ########.fr        #
 	#                                                                              #
 	# **************************************************************************** #
 
@@ -74,7 +74,8 @@ SRC =	ft_putchar.c \
 		ft_swapint.c \
 		ft_swapstr.c \
 		ft_intlen.c \
-		ft_quicksort.c
+		ft_quicksort.c \
+		get_next_line.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -82,17 +83,28 @@ CC = gcc -I./includes
 
 CFLAGS = -Wall -Wextra -Werror
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+.SILENT:
 
 all: $(NAME)
+
+$(NAME): $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo ""
+	@echo "libft compiled !"
+
+%.o: %.c
+	@echo -n .
+	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 clean:
-	rm -rf $(OBJ)
+	@echo "Objects deleted !"
+	@/bin/rm -rf $(OBJ)
 
 fclean: clean 
-	rm -rf $(NAME) a.out
+	@echo "libft.a deleted !"
+	@/bin/rm -rf $(NAME) a.out
 
-re: fclean $(NAME)
+re: fclean all
 
-all: $(NAME)
+.PHONY: all re fclean clean

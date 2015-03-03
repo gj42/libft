@@ -6,7 +6,7 @@
 /*   By: gjensen <gjensen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 13:55:14 by gjensen           #+#    #+#             */
-/*   Updated: 2015/01/22 18:39:52 by gjensen          ###   ########.fr       */
+/*   Updated: 2015/03/03 20:31:14 by gjensen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# define BUFF_SIZE 1
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
@@ -86,4 +87,5 @@ void				ft_swapint(int *a, int *b);
 int					ft_intlen(int number);
 int					*ft_quicksort(int *base, int start, int end);
 void				ft_swapstr(char *a, char *b);
+int					get_next_line(int const fd, char **line);
 #endif
